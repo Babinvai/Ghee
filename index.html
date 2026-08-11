@@ -1927,10 +1927,21 @@ footer h3, footer h4, .footer-section h3, .footer-section h4 {
     margin: 0 !important;
   }
   .mobile-center-seal .seal-text { color: #D4AF37 !important; }
+}
+
+/* =========================================================
+   3. HEADER COMPRESSION (Fixes the 980px Mobile Desktop Mode)
+========================================================= */
+/* Prevents links and buttons from EVER breaking into two lines */
+header nav, .desktop-nav, header .btn, header .btn-primary {
+  white-space: nowrap !important;
+}
 
 
 
-  /* =========================================================
+
+
+/* =========================================================
    2. MOBILE VIEW: VERTICAL STACKING OVER CART
 ========================================================= */
   header, .main-header {
@@ -1954,15 +1965,6 @@ footer h3, footer h4, .footer-section h3, .footer-section h4 {
     width: 14px !important;
     height: 14px !important;
   }
-}
-
-/* =========================================================
-   3. HEADER COMPRESSION (Fixes the 980px Mobile Desktop Mode)
-========================================================= */
-/* Prevents links and buttons from EVER breaking into two lines */
-header nav, .desktop-nav, header .btn, header .btn-primary {
-  white-space: nowrap !important;
-}
 
 /* Specifically targets that faked 980px width so your real laptop view is untouched */
 /* =========================================================
