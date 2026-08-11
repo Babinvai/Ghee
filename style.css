@@ -1945,36 +1945,40 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 /* =========================================================
    3. SMART HEADER WRAP (Fixes iPhone Desktop Mode Cut-off)
 ========================================================= */
+/* =========================================================
+   3. SMART HEADER WRAP (Moto Spread + iPhone Center-Wrap)
+========================================================= */
 @media (min-width: 769px) and (max-width: 1150px) {
   
-  /* 1. Prevent side-scrolling, but allow the header to grow taller */
+  /* Prevent side-scrolling */
   body, html {
     overflow-x: hidden !important;
   }
 
-  /* 2. The Magic Wrap: Allows the header to break into two centered lines */
+  /* 1. THE MOTO FIX: Use space-between to push the logo left and buttons right */
   header, .main-header {
     display: flex !important;
-    flex-wrap: wrap !important; /* Allows overflowing items to drop down */
-    justify-content: center !important; /* Perfectly centers both lines */
+    flex-wrap: wrap !important;
+    justify-content: space-between !important; /* Pushes items to the edges */
     align-items: center !important;
     width: 100% !important;
-    height: auto !important; /* Lets the header expand vertically */
-    padding: 12px 10px !important;
+    height: auto !important;
+    padding: 12px 15px !important;
     box-sizing: border-box !important;
-    gap: 12px 15px !important; /* Vertical and horizontal spacing between items */
+    gap: 10px !important;
   }
 
-  /* 3. Allow the navigation links to wrap and center dynamically */
+  /* 2. THE iPHONE FIX: Allow the middle nav to grow, center, and wrap elegantly */
   header nav, .desktop-nav {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
+    justify-content: center !important; /* Keeps links centered on their own line */
     align-items: center !important;
-    gap: 8px 12px !important; /* row-gap, column-gap */
+    gap: 8px 12px !important;
+    flex: 1 1 auto !important; /* Allows the nav block to flexibly fill the middle space */
   }
   
-  /* 4. Keep individual items intact (Prevents "Lab" and "Report" from splitting) */
+  /* Keep individual items intact */
   header nav a, .desktop-nav a {
     white-space: nowrap !important;
     font-size: 0.75rem !important; 
@@ -1982,7 +1986,7 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     margin: 0 !important;
   }
 
-  /* 5. Ensure the Action Button stays beautifully proportioned */
+  /* Keep the Action Button neatly sized */
   header .btn, header .btn-primary, header button {
     white-space: nowrap !important;
     font-size: 0.75rem !important;
@@ -1990,7 +1994,7 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     min-width: auto !important; 
   }
 
-  /* 6. Keep the Gold Badge elegant and visible */
+  /* Keep the Gold Badge elegant */
   .mobile-center-seal {
     padding: 3px 8px !important;
     margin-left: 5px !important;
@@ -2001,11 +2005,9 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     font-size: 0.6rem !important;
   }
   
-  /* 7. Moderate logo size for balance */
+  /* Moderate logo size for balance */
   header .logo img, header .brand-logo img {
     max-width: 85px !important; 
     height: auto !important;
   }
 }
-
-
