@@ -1937,35 +1937,6 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
   white-space: nowrap !important;
 }
 
-
-
-
-
-/* =========================================================
-   2. MOBILE VIEW: VERTICAL STACKING OVER CART
-========================================================= */
-  header, .main-header {
-    position: relative !important; /* Ensures the floating icon stays inside the header */
-  }
-
-  .header-account-btn {
-    /* FIX 3: Forces the icon to float exactly above the cart icon */
-    position: absolute !important;
-    top: 10px !important;   /* Pushes it up to the top half of the header */
-    right: 48px !important; /* PERFECT POSITIONING: Adjust this number slightly (e.g., 45px or 50px) if it isn't perfectly centered over your specific cart */
-    
-    /* Shrinks it slightly so it looks elegant and proportionate on a phone screen */
-    width: 28px !important;
-    height: 28px !important;
-    margin: 0 !important;
-    border-width: 1px !important;
-  }
-
-  .header-account-btn svg {
-    width: 14px !important;
-    height: 14px !important;
-  }
-
 /* Specifically targets that faked 980px width so your real laptop view is untouched */
 /* =========================================================
    3. EXTREME HEADER COMPRESSION (Fixes iPhone Desktop Mode)
@@ -2123,4 +2094,33 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
   border-color: #1B3E2F !important;
   box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5) !important;
   transform: translateY(-2px) !important; 
+}
+
+
+/* =========================================================
+   MOBILE ACCOUNT ICON PLACEMENT (NEW BLOCK)
+========================================================= */
+@media (max-width: 768px) {
+  
+  header, .main-header {
+    position: relative !important; 
+  }
+
+  .header-account-btn {
+    /* Forces the icon to float exactly above the cart icon */
+    position: absolute !important;
+    top: 10px !important;   
+    right: 48px !important; /* IMPORTANT: Increase/decrease this number if it isn't perfectly centered over your cart */
+    
+    /* Mobile sizing */
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+    border-width: 1px !important;
+  }
+
+  .header-account-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
 }
