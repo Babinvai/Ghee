@@ -1938,39 +1938,62 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 }
 
 /* Specifically targets that faked 980px width so your real laptop view is untouched */
+/* =========================================================
+   3. EXTREME HEADER COMPRESSION (Fixes iPhone Desktop Mode)
+========================================================= */
+/* Target that exact faked desktop width range */
 @media (min-width: 769px) and (max-width: 1150px) {
   
-  /* Slightly shrinks the new gold badge to save space */
-  .mobile-center-seal {
-    padding: 2px 8px !important;
-    margin-left: 10px !important;
+  /* 1. Stop horizontal overflow (Kills the white space on the right) */
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
   }
-  .mobile-center-seal .seal-text {
-    font-size: 0.6rem !important;
-    letter-spacing: 0.5px !important;
+
+  /* 2. Lock the header inside the screen boundaries */
+  header, .main-header {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    overflow: hidden !important;
   }
-  
-  /* Aggressively tightens the gaps between your menu items */
+
+  /* 3. Aggressively squeeze the navigation links */
   header nav, .desktop-nav {
-    gap: 6px !important; 
+    gap: 2px !important; /* Bare minimum spacing */
   }
   
-  /* Shrinks the menu text just enough to fit one line */
   header nav a, .desktop-nav a {
-    font-size: 0.75rem !important; 
+    font-size: 0.65rem !important; /* Smaller text to guarantee a fit */
     padding: 0 3px !important;
+    letter-spacing: -0.2px !important; /* Tightly packs the letters */
+  }
+
+  /* 4. Force "Scan Batch" to NEVER wrap, no matter what */
+  header .btn, header .btn-primary, header button {
+    white-space: nowrap !important;
+    font-size: 0.65rem !important;
+    padding: 4px 6px !important;
+    min-width: auto !important; /* Strips away any hidden fixed widths */
+  }
+
+  /* 5. Micro-size the Gold Badge so we don't lose it */
+  .mobile-center-seal {
+    padding: 2px 5px !important;
+    margin-left: 5px !important;
   }
   
-  /* Pulls the edges of the header inward */
-  header {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+  .mobile-center-seal .seal-text {
+    font-size: 0.55rem !important;
+    letter-spacing: 0px !important;
   }
   
-  /* Shrinks the Scan Batch button slightly */
-  header .btn, header .btn-primary {
-    padding: 6px 10px !important;
-    font-size: 0.75rem !important;
+  /* 6. Slightly reduce the main logo size to buy more horizontal room */
+  header .logo img, header .brand-logo img {
+    max-width: 75px !important; 
+    height: auto !important;
   }
 }
 
