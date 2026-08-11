@@ -1942,57 +1942,68 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
    3. EXTREME HEADER COMPRESSION (Fixes iPhone Desktop Mode)
 ========================================================= */
 /* Target that exact faked desktop width range */
+/* =========================================================
+   3. SMART HEADER WRAP (Fixes iPhone Desktop Mode Cut-off)
+========================================================= */
 @media (min-width: 769px) and (max-width: 1150px) {
   
-  /* 1. Stop horizontal overflow (Kills the white space on the right) */
+  /* 1. Prevent side-scrolling, but allow the header to grow taller */
   body, html {
     overflow-x: hidden !important;
-    width: 100% !important;
   }
 
-  /* 2. Lock the header inside the screen boundaries */
+  /* 2. The Magic Wrap: Allows the header to break into two centered lines */
   header, .main-header {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Allows overflowing items to drop down */
+    justify-content: center !important; /* Perfectly centers both lines */
+    align-items: center !important;
     width: 100% !important;
-    max-width: 100vw !important;
+    height: auto !important; /* Lets the header expand vertically */
+    padding: 12px 10px !important;
     box-sizing: border-box !important;
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    overflow: hidden !important;
+    gap: 12px 15px !important; /* Vertical and horizontal spacing between items */
   }
 
-  /* 3. Aggressively squeeze the navigation links */
+  /* 3. Allow the navigation links to wrap and center dynamically */
   header nav, .desktop-nav {
-    gap: 2px !important; /* Bare minimum spacing */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 12px !important; /* row-gap, column-gap */
   }
   
+  /* 4. Keep individual items intact (Prevents "Lab" and "Report" from splitting) */
   header nav a, .desktop-nav a {
-    font-size: 0.65rem !important; /* Smaller text to guarantee a fit */
-    padding: 0 3px !important;
-    letter-spacing: -0.2px !important; /* Tightly packs the letters */
+    white-space: nowrap !important;
+    font-size: 0.75rem !important; 
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* 4. Force "Scan Batch" to NEVER wrap, no matter what */
+  /* 5. Ensure the Action Button stays beautifully proportioned */
   header .btn, header .btn-primary, header button {
     white-space: nowrap !important;
-    font-size: 0.65rem !important;
-    padding: 4px 6px !important;
-    min-width: auto !important; /* Strips away any hidden fixed widths */
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+    min-width: auto !important; 
   }
 
-  /* 5. Micro-size the Gold Badge so we don't lose it */
+  /* 6. Keep the Gold Badge elegant and visible */
   .mobile-center-seal {
-    padding: 2px 5px !important;
+    padding: 3px 8px !important;
     margin-left: 5px !important;
+    margin-right: 5px !important;
   }
   
   .mobile-center-seal .seal-text {
-    font-size: 0.55rem !important;
-    letter-spacing: 0px !important;
+    font-size: 0.6rem !important;
   }
   
-  /* 6. Slightly reduce the main logo size to buy more horizontal room */
+  /* 7. Moderate logo size for balance */
   header .logo img, header .brand-logo img {
-    max-width: 75px !important; 
+    max-width: 85px !important; 
     height: auto !important;
   }
 }
