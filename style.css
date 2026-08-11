@@ -1628,28 +1628,7 @@ footer {
 }
 
 
-/* --- PREMIUM MOBILE BUTTON STACKING --- */
-  .hero-buttons {
-    display: flex !important;
-    flex-direction: column !important; /* Forces them to stack top-to-bottom */
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    gap: 15px !important; /* Perfect spacing between the two buttons */
-    margin-top: 10px !important;
-  }
-  
-  .hero-buttons .btn-primary, 
-  .hero-buttons .btn-secondary {
-    width: 100% !important; /* Makes them stretch nicely across the card */
-    max-width: 100% !important;
-    box-sizing: border-box !important; 
-    margin: 0 !important; 
-    padding: 14px 20px !important; /* Gives them a nice, tall, tappable height */
-    text-align: center !important;
-    font-size: 1.05rem !important; /* Ensures the text fits on one line */
-    white-space: nowrap !important; /* Strictly prevents text from wrapping to a second line */
-  }
+
 /* Hide the overlay on Desktop so the CSS Mask continues to work normally */
 @media (min-width: 769px) {
   .hero-mobile-overlay {
@@ -1888,6 +1867,8 @@ footer a:hover, .footer-section a:hover {
 footer h3, footer h4, .footer-section h3, .footer-section h4 {
   color: #D4AF37 !important;
 }
+
+
 
 
 
