@@ -1984,36 +1984,48 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
   }
 
   /* 3. FIX: Perfect internal alignment for the "100% Pure" Gold Badge */
+  /* 1. FIX: Push the Gold Badge away from the brand logo */
   .mobile-center-seal {
     display: inline-flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 5px 12px !important;
-    gap: 5px !important; /* Perfectly balances the text and leaf */
-    margin: 0 !important;
+    gap: 5px !important; 
+    margin-left: 20px !important; /* Increased from 5px to 20px for perfect breathing room */
+    margin-right: 5px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   
-  .mobile-center-seal .seal-text {
-    font-size: 0.75rem !important;
-    margin: 0 !important; /* Removes hidden margins pushing it off-center */
-  }
+  .mobile-center-seal .seal-text,
   .mobile-center-seal .seal-icon {
     margin: 0 !important;
   }
 
-  /* 4. FIX: Force "Scan Batch" into a single, perfectly centered line */
-  header .btn, header .btn-primary, header button {
+  /* 2. FIX: Force "Scan Batch" into a perfectly centered horizontal pill */
+  header .btn, 
+  header .btn-primary, 
+  header button,
+  header a.btn-primary {
     display: inline-flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    flex-wrap: nowrap !important; /* Absolutely forbids stacking the icon/text */
-    white-space: nowrap !important;
-    gap: 6px !important; /* Exact space between magnifying glass and text */
-    padding: 8px 16px !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important; 
+    
+    /* These three lines physically prevent it from squashing into a square */
+    width: max-content !important; 
+    min-width: auto !important;
+    max-width: none !important;
+    
+    height: 38px !important; /* Locks in a perfect, elegant height */
+    padding: 0 16px !important;
+    gap: 6px !important; 
     font-size: 0.85rem !important;
     text-align: center !important;
+    margin: 0 !important;
   }
 
   /* Keep logo beautifully sized */
