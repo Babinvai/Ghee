@@ -2098,7 +2098,6 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 
 
 /* =========================================================
-   MOBILE ACCOUNT ICON PLACEMENT (NEW BLOCK)
 /* =========================================================
    MOBILE ACCOUNT ICON PLACEMENT (PIXEL-PERFECT BALANCE)
 ========================================================= */
@@ -2110,18 +2109,17 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 
   .header-account-btn {
     position: absolute !important;
-    
-    /* 1. HORIZONTAL FIX: Shifted slightly right to center perfectly between the trolley and the (0) */
     right: 56px !important; 
-    
-    /* 2. VERTICAL FIX: Pushed down significantly from the ceiling */
     top: 18px !important;   
-    
-    /* Mobile sizing */
     width: 28px !important;
     height: 28px !important;
     margin: 0 !important;
-    border-width: 1px !important;
+    
+    /* --- NEW COLOR OVERRIDES (Only for Mobile) --- */
+    background: transparent !important; /* Removes the deep green */
+    color: #1B3E2F !important; /* Makes the person icon dark green */
+    border: 1.5px solid rgba(27, 62, 47, 0.3) !important; /* Subtle dark green border */
+    box-shadow: none !important; /* Removes the heavy glow */
   }
 
   .header-account-btn svg {
@@ -2129,7 +2127,6 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     height: 14px !important;
   }
 
-  /* 3. CART FIX: Pushes the cart down exactly as much as the account icon to create a perfect mirror stack */
   .header-account-btn + * {
     transform: translateY(18px) !important; 
   }
