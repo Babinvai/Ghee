@@ -1603,6 +1603,30 @@ footer {
     max-width: 95% !important;
   }
 
+  /* 4. Ensure buttons are spaced beautifully */
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 320px !important; 
+    margin: 0 auto !important; 
+    padding: 0 !important;
+    gap: 15px !important;
+  }
+  
+  .hero-buttons .btn-primary, 
+  .hero-buttons .btn-secondary {
+    width: 100% !important; 
+    max-width: 100% !important;
+    margin: 0 !important; 
+    box-sizing: border-box !important; 
+    display: flex !important; 
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
 
 /* --- PREMIUM MOBILE BUTTON STACKING --- */
   .hero-buttons {
