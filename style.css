@@ -2099,35 +2099,32 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 
 /* =========================================================
 /* =========================================================
-   MOBILE ACCOUNT ICON PLACEMENT (PIXEL-PERFECT BALANCE)
-========================================================= */
 /* =========================================================
-   MOBILE ACCOUNT ICON (THE ULTIMATE HORIZONTAL FIX)
+   MOBILE ACCOUNT ICON (REFINED COLOR & SPACING)
 ========================================================= */
 @media (max-width: 768px) {
   
   header, .main-header {
-    align-items: center !important; /* Ensures the logo, seal, and icons all share the exact same middle line */
+    align-items: center !important; 
   }
 
   .header-account-btn {
-    /* 1. Undo the absolute stacking and let it flow naturally */
     position: relative !important;
     right: auto !important;
     top: auto !important;
     
-    /* 2. The Premium Mobile Style: Soft, borderless gold wash */
-    background: rgba(212, 175, 55, 0.15) !important; 
-    color: #1B3E2F !important; 
-    border: none !important; 
+    /* 1. THE NEW PREMIUM COLOR SCHEME (Ghost Style) */
+    background: transparent !important; /* Removes the muddy wash */
+    color: #1B3E2F !important; /* Crisp dark green icon */
+    border: 1px solid rgba(27, 62, 47, 0.4) !important; /* Delicate, elegant green ring */
     box-shadow: none !important;
     
-    /* 3. Perfect touch-target sizing */
+    /* 2. Perfect touch-target sizing */
     width: 32px !important;
     height: 32px !important;
     
-    /* 4. Clean spacing between the account and the cart */
-    margin: 0 12px 0 0 !important; 
+    /* 3. CLOSER TO THE CART: Reduced right margin from 12px down to 5px */
+    margin: 0 5px 0 0 !important; 
   }
 
   .header-account-btn svg {
@@ -2135,7 +2132,7 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     height: 16px !important;
   }
 
-  /* 5. Undo the cart push-down hack so it snaps back to the perfect center */
+  /* Ensures the cart stays perfectly centered */
   .header-account-btn + * {
     transform: none !important; 
   }
