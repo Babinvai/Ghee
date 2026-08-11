@@ -2100,7 +2100,7 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 /* =========================================================
    MOBILE ACCOUNT ICON PLACEMENT (NEW BLOCK)
 /* =========================================================
-   MOBILE ACCOUNT ICON PLACEMENT (PERFECTED ALIGNMENT)
+   MOBILE ACCOUNT ICON PLACEMENT (PIXEL-PERFECT BALANCE)
 ========================================================= */
 @media (max-width: 768px) {
   
@@ -2111,11 +2111,11 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
   .header-account-btn {
     position: absolute !important;
     
-    /* 1. Pulled slightly higher to avoid cramping the cart */
-    top: 5px !important;   
+    /* 1. HORIZONTAL FIX: Shifted slightly right to center perfectly between the trolley and the (0) */
+    right: 56px !important; 
     
-    /* 2. Increased from 48px to 68px to push it LEFT, centering it perfectly over the trolley instead of the (0) */
-    right: 68px !important; 
+    /* 2. VERTICAL FIX: Pushed down significantly from the ceiling */
+    top: 18px !important;   
     
     /* Mobile sizing */
     width: 28px !important;
@@ -2129,8 +2129,8 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     height: 14px !important;
   }
 
-  /* 3. The Nudge: This securely targets the Cart (since it is right next to the account button) and gently pushes it down */
+  /* 3. CART FIX: Pushes the cart down exactly as much as the account icon to create a perfect mirror stack */
   .header-account-btn + * {
-    transform: translateY(8px) !important; 
+    transform: translateY(18px) !important; 
   }
 }
