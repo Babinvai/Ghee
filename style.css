@@ -2055,41 +2055,72 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 /* =========================================================
    PREMIUM ACCOUNT LOGIN ICON
 ========================================================= */
+/* =========================================================
+   1. THE PREMIUM ACCOUNT ICON (Fixes Oval & Redesigns)
+========================================================= */
 .header-account-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   
-  /* Creates a perfect circle */
+  /* FIX 1: This single line absolutely prevents the icon from ever squashing into an oval */
+  flex-shrink: 0 !important; 
+  
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;
   
-  /* Subtle dark green border to match the brand */
-  border: 1.5px solid rgba(27, 62, 47, 0.2) !important; 
-  color: #1B3E2F !important;
-  background: transparent !important;
-  text-decoration: none !important;
+  /* FIX 2: UNIQUE & ATTRACTIVE DESIGN (Dark Green Base with Gold Accents) */
+  background: linear-gradient(145deg, #1B3E2F, #122a1f) !important;
+  border: 1.5px solid #D4AF37 !important; 
+  color: #D4AF37 !important; 
+  box-shadow: 0 4px 10px rgba(27, 62, 47, 0.3), inset 0 2px 5px rgba(255,255,255,0.1) !important;
   
-  /* Spacing: Keeps it separated from the Scan Batch button and Cart */
   margin-left: 10px !important;
   margin-right: 5px !important;
-  
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-/* Sizing the actual SVG person graphic */
 .header-account-btn svg {
   width: 18px !important;
   height: 18px !important;
   transition: all 0.3s ease !important;
 }
 
-/* THE LUXURY HOVER EFFECT */
+/* The Luxury Hover Effect */
 .header-account-btn:hover {
-  background: #D4AF37 !important; /* Fills with Premium Gold */
-  color: #ffffff !important; /* Icon turns white */
-  border-color: #D4AF37 !important;
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4) !important; /* Golden glow */
-  transform: translateY(-2px) !important; /* Subtle lift effect */
+  background: linear-gradient(145deg, #D4AF37, #aa7c11) !important;
+  color: #1B3E2F !important;
+  border-color: #1B3E2F !important;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5) !important;
+  transform: translateY(-2px) !important; 
+}
+
+
+/* =========================================================
+   MOBILE ACCOUNT ICON PLACEMENT (NEW BLOCK)
+========================================================= */
+@media (max-width: 768px) {
+  
+  header, .main-header {
+    position: relative !important; 
+  }
+
+  .header-account-btn {
+    /* Forces the icon to float exactly above the cart icon */
+    position: absolute !important;
+    top: 10px !important;   
+    right: 48px !important; /* IMPORTANT: Increase/decrease this number if it isn't perfectly centered over your cart */
+    
+    /* Mobile sizing */
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+    border-width: 1px !important;
+  }
+
+  .header-account-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
 }
