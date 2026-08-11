@@ -1967,6 +1967,20 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     column-gap: 15px !important;
   }
 
+
+  /* Shrink the account icon slightly to fit the tight one-line layout */
+  .header-account-btn {
+    width: 34px !important;
+    height: 34px !important;
+    margin-left: 5px !important;
+    margin-right: 2px !important;
+  }
+  
+  .header-account-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
   /* 2. RESTORE NAV LINKS: Beautiful, wide spacing returned */
   header nav, .desktop-nav {
     display: flex !important;
@@ -2033,4 +2047,49 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     max-width: 90px !important; 
     height: auto !important;
   }
+}
+
+
+
+
+/* =========================================================
+   PREMIUM ACCOUNT LOGIN ICON
+========================================================= */
+.header-account-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  /* Creates a perfect circle */
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  
+  /* Subtle dark green border to match the brand */
+  border: 1.5px solid rgba(27, 62, 47, 0.2) !important; 
+  color: #1B3E2F !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  
+  /* Spacing: Keeps it separated from the Scan Batch button and Cart */
+  margin-left: 10px !important;
+  margin-right: 5px !important;
+  
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Sizing the actual SVG person graphic */
+.header-account-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* THE LUXURY HOVER EFFECT */
+.header-account-btn:hover {
+  background: #D4AF37 !important; /* Fills with Premium Gold */
+  color: #ffffff !important; /* Icon turns white */
+  border-color: #D4AF37 !important;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4) !important; /* Golden glow */
+  transform: translateY(-2px) !important; /* Subtle lift effect */
 }
