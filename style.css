@@ -1872,3 +1872,106 @@ footer h3, footer h4, .footer-section h3, .footer-section h4 {
 
 
 
+/* =========================================================
+   1. PREMIUM "100% PURE" HERITAGE BADGE (DESKTOP)
+========================================================= */
+/* Turns the simple text into a high-end, glowing golden pill badge next to your logo */
+.mobile-center-seal {
+  display: flex !important;
+  flex-direction: row !important; /* Aligns text and leaf side-by-side */
+  align-items: center;
+  background: linear-gradient(135deg, #f9f2d3 0%, #d4af37 50%, #aa7c11 100%);
+  padding: 4px 12px;
+  border-radius: 20px; /* Creates the beautiful pill shape */
+  margin-left: 15px; /* Spaces it perfectly from your main logo */
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  position: static !important; /* Keeps it in the normal header flow */
+  transform: none !important;
+  animation: goldenShine 3s infinite alternate; /* Luxurious breathing glow */
+}
+
+.mobile-center-seal .seal-text {
+  font-size: 0.7rem !important;
+  color: #1B3E2F !important; /* Dark green text pops beautifully against gold */
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  margin: 0 6px 0 0 !important;
+  text-shadow: none !important;
+}
+
+.mobile-center-seal .seal-icon {
+  font-size: 0.9rem !important;
+  animation: none !important; /* Stops the float so it stays perfectly aligned */
+}
+
+/* The premium glowing animation */
+@keyframes goldenShine {
+  0% { box-shadow: 0 2px 5px rgba(212, 175, 55, 0.2); }
+  100% { box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6); }
+}
+
+/* =========================================================
+   2. MOBILE OVERRIDE FOR THE BADGE (Keeps it centered on phones)
+========================================================= */
+@media (max-width: 768px) {
+  .mobile-center-seal {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    flex-direction: column !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+  .mobile-center-seal .seal-text { color: #D4AF37 !important; }
+}
+
+/* =========================================================
+   3. HEADER COMPRESSION (Fixes the 980px Mobile Desktop Mode)
+========================================================= */
+/* Prevents links and buttons from EVER breaking into two lines */
+header nav, .desktop-nav, header .btn, header .btn-primary {
+  white-space: nowrap !important;
+}
+
+/* Specifically targets that faked 980px width so your real laptop view is untouched */
+@media (min-width: 769px) and (max-width: 1150px) {
+  
+  /* Slightly shrinks the new gold badge to save space */
+  .mobile-center-seal {
+    padding: 2px 8px !important;
+    margin-left: 10px !important;
+  }
+  .mobile-center-seal .seal-text {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.5px !important;
+  }
+  
+  /* Aggressively tightens the gaps between your menu items */
+  header nav, .desktop-nav {
+    gap: 6px !important; 
+  }
+  
+  /* Shrinks the menu text just enough to fit one line */
+  header nav a, .desktop-nav a {
+    font-size: 0.75rem !important; 
+    padding: 0 3px !important;
+  }
+  
+  /* Pulls the edges of the header inward */
+  header {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  /* Shrinks the Scan Batch button slightly */
+  header .btn, header .btn-primary {
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+
