@@ -1948,66 +1948,77 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
 /* =========================================================
    3. SMART HEADER WRAP (Moto Spread + iPhone Center-Wrap)
 ========================================================= */
+/* =========================================================
+   3. FLAWLESS DESKTOP MODE (Moto Spacing + iPhone Wrap)
+========================================================= */
 @media (min-width: 769px) and (max-width: 1150px) {
   
-  /* Prevent side-scrolling */
-  body, html {
-    overflow-x: hidden !important;
-  }
+  body, html { overflow-x: hidden !important; }
 
-  /* 1. THE MOTO FIX: Use space-between to push the logo left and buttons right */
+  /* 1. RESTORE MOTO SPACING: Natural, wide spacing for the main header */
   header, .main-header {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: space-between !important; /* Pushes items to the edges */
+    justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    height: auto !important;
-    padding: 12px 15px !important;
-    box-sizing: border-box !important;
-    gap: 10px !important;
+    padding: 15px 20px !important; /* Restored breathing room */
+    row-gap: 15px !important;
+    column-gap: 15px !important;
   }
 
-  /* 2. THE iPHONE FIX: Allow the middle nav to grow, center, and wrap elegantly */
+  /* 2. RESTORE NAV LINKS: Beautiful, wide spacing returned */
   header nav, .desktop-nav {
     display: flex !important;
     flex-wrap: wrap !important;
-    justify-content: center !important; /* Keeps links centered on their own line */
+    justify-content: center !important;
     align-items: center !important;
-    gap: 8px 12px !important;
-    flex: 1 1 auto !important; /* Allows the nav block to flexibly fill the middle space */
+    gap: 15px 25px !important; /* Pushes the options comfortably apart */
+    flex: 1 1 auto !important;
   }
   
-  /* Keep individual items intact */
   header nav a, .desktop-nav a {
+    font-size: 0.9rem !important; /* Returned to readable, normal size */
     white-space: nowrap !important;
-    font-size: 0.75rem !important; 
     padding: 0 !important;
-    margin: 0 !important;
   }
 
-  /* Keep the Action Button neatly sized */
-  header .btn, header .btn-primary, header button {
-    white-space: nowrap !important;
-    font-size: 0.75rem !important;
-    padding: 6px 12px !important;
-    min-width: auto !important; 
-  }
-
-  /* Keep the Gold Badge elegant */
+  /* 3. FIX: Perfect internal alignment for the "100% Pure" Gold Badge */
   .mobile-center-seal {
-    padding: 3px 8px !important;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5px 12px !important;
+    gap: 5px !important; /* Perfectly balances the text and leaf */
+    margin: 0 !important;
   }
   
   .mobile-center-seal .seal-text {
-    font-size: 0.6rem !important;
+    font-size: 0.75rem !important;
+    margin: 0 !important; /* Removes hidden margins pushing it off-center */
   }
-  
-  /* Moderate logo size for balance */
+  .mobile-center-seal .seal-icon {
+    margin: 0 !important;
+  }
+
+  /* 4. FIX: Force "Scan Batch" into a single, perfectly centered line */
+  header .btn, header .btn-primary, header button {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important; /* Absolutely forbids stacking the icon/text */
+    white-space: nowrap !important;
+    gap: 6px !important; /* Exact space between magnifying glass and text */
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    text-align: center !important;
+  }
+
+  /* Keep logo beautifully sized */
   header .logo img, header .brand-logo img {
-    max-width: 85px !important; 
+    max-width: 90px !important; 
     height: auto !important;
   }
 }
