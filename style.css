@@ -2137,3 +2137,48 @@ header nav, .desktop-nav, header .btn, header .btn-primary {
     transform: none !important; 
   }
 }
+
+
+/* =========================================================
+   NEW MOBILE TRUST BADGE (CHEMICAL FREE)
+========================================================= */
+
+/* 1. STRICT DESKTOP HIDE: Completely invisible on laptops/tablets */
+.mobile-trust-badge {
+  display: none !important;
+}
+
+/* 2. MOBILE DISPLAY & STYLING */
+@media (max-width: 768px) {
+  .mobile-trust-badge {
+    /* Flex alignment to keep the shield and text perfectly level */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    
+    /* The Premium Micro-Badge Aesthetic */
+    background: rgba(212, 175, 55, 0.08) !important; /* Extremely soft gold wash */
+    border: 1px solid rgba(212, 175, 55, 0.4) !important; /* Delicate gold ring */
+    border-radius: 6px !important; 
+    padding: 3px 6px !important;
+    
+    /* Micro-Typography to fit the gap cleanly */
+    color: #1B3E2F !important; /* Dark brand green */
+    font-size: 0.55rem !important; 
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    white-space: nowrap !important; /* Prevents text from breaking onto two lines */
+    
+    /* Spacing: Pushes it slightly away from the logo */
+    margin: 0 8px !important; 
+  }
+  
+  /* Styling the tiny shield icon */
+  .mobile-trust-badge svg {
+    color: #D4AF37 !important; /* Premium Gold */
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
